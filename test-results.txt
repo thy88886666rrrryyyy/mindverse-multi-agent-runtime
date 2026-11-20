@@ -1,0 +1,113 @@
+
+> mindverse-runtime-challenge@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.ts tests/**/*.test.ts
+
+TAP version 13
+# Subtest: snapshot roundtrip preserves the graph and isolates mutations
+ok 1 - snapshot roundtrip preserves the graph and isolates mutations
+  ---
+  duration_ms: 1.292601
+  type: 'test'
+  ...
+# Subtest: invalid edges, duplicate IDs and invalid positions are rejected
+ok 2 - invalid edges, duplicate IDs and invalid positions are rejected
+  ---
+  duration_ms: 0.28299
+  type: 'test'
+  ...
+# Subtest: import rejects unsupported versions, self-links and duplicate edge IDs
+ok 3 - import rejects unsupported versions, self-links and duplicate edge IDs
+  ---
+  duration_ms: 0.150924
+  type: 'test'
+  ...
+# Subtest: bundled sample image survives JSON roundtrip but remote images are rejected
+ok 4 - bundled sample image survives JSON roundtrip but remote images are rejected
+  ---
+  duration_ms: 0.227418
+  type: 'test'
+  ...
+# Subtest: single-agent mock is deterministic and does not mutate its input
+ok 5 - single-agent mock is deterministic and does not mutate its input
+  ---
+  duration_ms: 1.888867
+  type: 'test'
+  ...
+# Subtest: invalid requests stop before any tool call
+ok 6 - invalid requests stop before any tool call
+  ---
+  duration_ms: 0.244243
+  type: 'test'
+  ...
+# Subtest: tool failure is explicit and produces no successful result
+ok 7 - tool failure is explicit and produces no successful result
+  ---
+  duration_ms: 0.191635
+  type: 'test'
+  ...
+# Subtest: three-plus agents hand off memory, evidence, approval and finish once
+ok 8 - three-plus agents hand off memory, evidence, approval and finish once
+  ---
+  duration_ms: 3.187597
+  type: 'test'
+  ...
+# Subtest: failure blocks, recovery avoids duplicate side effect, and stale approval is rejected
+ok 9 - failure blocks, recovery avoids duplicate side effect, and stale approval is rejected
+  ---
+  duration_ms: 2.885808
+  type: 'test'
+  ...
+# Subtest: cancellation prevents side effects and rejects invalid evidence policy
+ok 10 - cancellation prevents side effects and rejects invalid evidence policy
+  ---
+  duration_ms: 0.709985
+  type: 'test'
+  ...
+# Subtest: deleted or stale evidence is not retrievable
+ok 11 - deleted or stale evidence is not retrievable
+  ---
+  duration_ms: 0.368187
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 309.616025
+
+> mindverse-runtime-challenge@0.1.0 typecheck
+> tsc --noEmit
+
+
+> mindverse-runtime-challenge@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.29
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.8s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    69.4 kB         172 kB
+└ ○ /_not-found                            995 B         104 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/255-73938ce8a8eac1ad.js       46.6 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)           1.9 kB
+
+
+○  (Static)  prerendered as static content
+
